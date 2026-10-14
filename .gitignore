@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------
+# Data, generated results and weights stay local (too large for git)
+# ---------------------------------------------------------------
+# input datasets (dataset/, pytorch_mrcnn/dataset/)
+dataset/
+
+# inference results (inf/, us_split/, us_final/, final/, res tables) of the TF and PyTorch pipelines, and the
+# PyTorch validation runs; anchored so that the code folders src/inference/ and pytorch_mrcnn/src/... stay tracked
+/inference/
+/pytorch_mrcnn/inference/
+/pytorch_mrcnn/validation/
+# output folders of the reproduction runs suggested in the READMEs (inference_run/, inference_check/, mouse_run/, ...)
+/inference_*/
+/pytorch_mrcnn/inference_*/
+/mouse_run/
+/pytorch_mrcnn/mouse_run/
+/inference/mouse_data.ipynb
+# kept local: the mouse exploration notebook and the notes of the stored PyTorch mouse results
+/src/inference/mouse_data.ipynb
+/pytorch_mrcnn/inference/Mouse/README.md
+/pytorch_mrcnn/src/validation/report_template.html
+
+# the validation report, its images and its builder: kept local
+/pytorch_mrcnn/doc/
+/pytorch_mrcnn/src/validation/make_validation_report.py
+
+# trained / converted weights and training logs
+models/
+logs/
+*.h5
+*.pth
+*.pt
+
+# raw whole-slide scans and array dumps
+*.czi
+*.svs
+*.npz
+*.npy
+
+# Matterport README images (as in the legacy repo); pytorch_mrcnn/doc/assets/ stays tracked
+/assets/
+
+# ---------------------------------------------------------------
+# Python, notebooks, OS
+# ---------------------------------------------------------------
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+.DS_Store
