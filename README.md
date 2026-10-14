@@ -1197,10 +1197,10 @@ same.
 Use this bibtex to cite this paper and repo:
 
 ```
-@misc{colon_maskrcnn_2025,
+@misc{Colon_Crypt_Segmentation,
   title={Expression Gradient of Cancer Suppressor Gene Found in Colon Crypt Using Vision-AI},
-  author={Mahdi Behroozikhah, Amitash Nanda, Soni Khandelwal, Atishna Samantaray, Dharanidhar Dang, Debashis Sahoo},
-  year={2025},
+  author={Amitash Nanda, Mahdi Behroozikhah, Soni Khandelwal, Atishna Samantaray, Dharanidhar Dang, Debashis Sahoo},
+  year={2026},
 }
 ```
 
@@ -1214,13 +1214,16 @@ keep their MIT license as well ([`pytorch_mrcnn/mrcnn/LICENSE`](pytorch_mrcnn/mr
 
 ## Acknowledgements
 
+- [Boolean Lab](https://sites.google.com/view/debashis-sahoo/) (Debashis Sahoo, University of California San Diego).
+- This research used resources of the
+  [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/), a U.S. Department of
+  Energy Office of Science User Facility located at [Lawrence Berkeley National Laboratory](https://www.lbl.gov/),
+  on the [Perlmutter supercomputer](https://www.nersc.gov/what-we-do/resources/perlmutter) using NERSC award [BER]-ERCAP[ERCAP0037181].
 - [matterport/Mask_RCNN](https://github.com/matterport/Mask_RCNN): the Mask R-CNN implementation in `mrcnn/` and the
   samples in `samples/`.
-- [sahoo00/Colon_Mask_RCNN](https://github.com/sahoo00/Colon_Mask_RCNN): the original code of this project.
 - [multimodallearning/pytorch-mask-rcnn](https://github.com/multimodallearning/pytorch-mask-rcnn): the PyTorch Mask
   R-CNN layers in `pytorch_mrcnn/mrcnn/` and the starting point of the weight conversion.
-- [HistomicsTK](https://github.com/DigitalSlideArchive/HistomicsTK) (Reinhard colour normalisation) and
-  [imgaug](https://github.com/aleju/imgaug) (input resizing and augmentation).
+
 
 ## Contact
 
