@@ -1,0 +1,35 @@
+# TF1 CPU environment that re-ran the original TF pipeline on Perlmutter (October 2026) and reproduced the
+# published masks and per-slide values.
+# Versions that change results are pinned: scikit-image 0.15.0 (remove_small_objects keeps 32-pixel objects
+# in u_shape_split.py), OpenCV 4.5.1 (empty-image handling in ushape_bottom_up.py), imgaug 0.4.0 (cubic resize).
+# TF 1.15 has no build for current CUDA/A100 GPUs, so this environment runs on CPU (~1 s per tile).
+#
+# Create and finish, from the repository root (imgaug/imutils go in without dependencies so they do not pull a
+# newer numpy):
+#   conda env create -f envs/environment_cdx2_tf1_ref.yml -p /path/to/conda_envs/cdx2_tf1_ref
+#   /path/to/conda_envs/cdx2_tf1_ref/bin/pip install --no-deps imgaug==0.4.0 imutils==0.5.4
+#   conda activate /path/to/conda_envs/cdx2_tf1_ref
+# Optional extras: seaborn and ipykernel for the notebooks. The colour normalisation
+# (src/preprocess/color_normalize_pipe.py) has its own environment, environment_histomicstk.yml.
+
+name: cdx2_tf1_ref
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7.12
+  - numpy=1.16.6
+  - scipy=1.2.1
+  - scikit-image=0.15.0
+  - h5py=2.10.0
+  - pillow=9.2.0
+  - matplotlib=3.3.4
+  - opencv=4.5.1
+  - imageio=2.36.0
+  - shapely=1.7.1
+  - pandas=1.2.3
+  - ipython=7.33.0
+  - pip
+  - pip:
+      - tensorflow==1.15.5
+      - keras==2.2.4
+      - protobuf==3.20.3

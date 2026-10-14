@@ -1,0 +1,25 @@
+# Plotting environment (cdx2_plots) for the statistics figures of the TF workflow: src/inference/plot_pvalues.py
+# (violin plot and Welch p-values of a per-slide table, step 6) and src/inference/plot_pvalues_mouse.py (mouse DSS
+# figure). Both scripts need seaborn 0.13 and matplotlib 3.10, which require Python 3.8 or newer, so they cannot run in
+# the Python 3.7 TF environment (envs/environment_cdx2_tf1_ref.yml). The versions are those with which the scripts
+# drew the figures in plots/ (pandas 3.0.2, matplotlib 3.10.9, seaborn 0.13.2, NumPy 2.1.3, SciPy 1.14.1).
+#
+# Create (from the repository root):
+#   conda env create --file envs/environment_plots.yml --prefix /path/to/conda_envs/cdx2_plots
+#   conda activate /path/to/conda_envs/cdx2_plots
+
+name: cdx2_plots
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12.13
+  - pip
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pillow=12.2.0
+
+  - pip:
+      - matplotlib==3.10.9
+      - pandas==3.0.2
+      - seaborn==0.13.2

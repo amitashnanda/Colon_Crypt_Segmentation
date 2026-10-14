@@ -1,0 +1,46 @@
+# PyTorch environment (torch_env_mac) for the TF-parity pipeline in pytorch_mrcnn/ on an Apple-silicon Mac (osx-arm64).
+# Same pins as torch_env.yml (the Perlmutter / CUDA 12.4 environment), minus the CUDA parts: no nvidia channel and
+# no pytorch-cuda. The pytorch channel's osx-arm64 build of pytorch 2.5.1 runs on the CPU and on the Apple GPU (mps).
+#
+# Create:
+#   conda env create --file torch_env_mac.yml --prefix /path/to/miniconda3/envs/torch_env_mac
+#   conda activate torch_env_mac
+#
+# Run (from pytorch_mrcnn/; no NVIDIA GPU, so --device cpu):
+#   python src/inference/run_inference_pipeline.py --src ../mrcnn/dataset/Whole_Slides_Segments_Processed/CDX2_Data \
+#       --dest inference_run_mac --weights models/notransfer_torch.pth --device cpu
+
+name: torch_env_mac
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12.13
+  - pip
+
+  # PyTorch stack (CPU / mps build for osx-arm64)
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+
+  # Core numerics from conda
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pillow=12.2.0
+
+  - pip:
+      # Image / array (OpenCV and scikit-image versions change the U-shape patches)
+      - opencv-python==4.13.0.92
+      - scikit-image==0.26.0
+      - h5py==3.16.0
+      - tifffile==2026.4.11
+      - imageio==2.37.3
+      - shapely==2.1.2
+      - imutils==0.5.4
+
+      # Plotting and statistics (predicted_images drawings, pytorch_mrcnn/src/analysis/plot_pvalues.py)
+      - matplotlib==3.10.9
+      - pandas==3.0.2
+      - seaborn==0.13.2

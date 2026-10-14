@@ -1,0 +1,106 @@
+# TF1 GPU environment for current NVIDIA GPUs (compute capability 5.2 - 9.0), in particular Ampere / Ada / Hopper:
+# A100, A30, A40, A10, H100, L4, L40, RTX 30xx / 40xx, RTX A-series (the build also has code for Maxwell - Turing:
+# GTX 9xx/10xx, P100, V100, T4, RTX 20xx). Use this file on Perlmutter.
+# TensorFlow 1.15.5 as built by NVIDIA: nvidia-tensorflow 1.15.5+nv22.12 (CUDA 11.8, cuDNN 8.7, Python 3.8 only; GPU
+# code for sm_52 ... sm_90, PTX compute_90). The wheels are on https://pypi.nvidia.com (pypi.ngc.nvidia.com, which
+# nvidia-pyindex points to, no longer resolves). NVIDIA ended the project in 2025; 22.12 is the last wheel (the last
+# TF1 container is nvcr.io/nvidia/tensorflow:23.03-tf1-py3). The CUDA libraries come as pip wheels (nvidia-*-cu11);
+# no system CUDA toolkit is needed.
+# Python 3.8 has no build of scikit-image 0.15 or numpy 1.16, so this file uses scikit-image 0.16.2 (the oldest
+# Python 3.8 build) and numpy 1.21.6 (nvidia-tensorflow needs numpy >= 1.20; mrcnn and imgaug use np.bool, removed
+# in numpy 1.24). OpenCV 4.5.1, imgaug 0.4.0, Keras 2.2.4 and h5py 2.10.0 are as in environment_cdx2_tf1_ref.yml.
+# On the same inputs, the downstream steps (U-shape split, U-shape extraction, colour detection) give the same
+# results in this environment as in the CPU reference environment (see below).
+#
+# NVIDIA driver: >= 520 (CUDA 11.8), e.g. 525, 535, 550, 570, 580. Data-center GPUs on R450 (>= 450.80.02), R470,
+# R510 or R515 may work through CUDA 11 minor-version compatibility (not tested). Blackwell GPUs (B200, RTX 50xx)
+# are not supported by CUDA 11.8 / cuDNN 8.7; use the CPU environment or the PyTorch version there.
+#
+# Create from the repository root (conda >= 4.9; mamba works the same way), then two post-install steps:
+#   conda env create -f envs/environment_cdx2_tf1_gpu_ampere.yml -p /path/to/conda_envs/cdx2_tf1_gpu
+#   /path/to/conda_envs/cdx2_tf1_gpu/bin/pip install --no-deps imgaug==0.4.0 imutils==0.5.4
+#   ln -s ../../cuda_nvrtc/lib/libnvrtc.so.11.2 \
+#       /path/to/conda_envs/cdx2_tf1_gpu/lib/python3.8/site-packages/nvidia/cudnn/lib/libnvrtc.so
+#   conda activate /path/to/conda_envs/cdx2_tf1_gpu       # also sets NVIDIA_TF32_OVERRIDE=0 (variables: below)
+# Why: imgaug/imutils go in without dependencies so that they do not pull a newer numpy. cuDNN 8.7 loads the
+# unversioned libnvrtc.so, which no pip wheel ships: without the link the first convolution aborts with
+# "Could not load library libcudnn_cnn_infer.so.8. Error: libnvrtc.so: cannot open shared object file" (unless some
+# CUDA toolkit happens to be on LD_LIBRARY_PATH). NVIDIA_TF32_OVERRIDE=0 switches off the TF32 math that NVIDIA's TF
+# uses by default on Ampere and newer GPUs: with TF32, 25 of 32 crypt masks on 5 test tiles differ from the
+# published ones, without it all 32 are identical. If you run python without `conda activate`, export
+# NVIDIA_TF32_OVERRIDE=0 yourself. Check that the GPU computes correctly (expect an error of about 1e-06; about 5e-05
+# means TF32 is on):
+#   python -c "import numpy as np, tensorflow as tf; a = np.random.rand(1024, 1024).astype('float32'); p = tf.placeholder(tf.float32, a.shape); r = tf.Session().run(tf.matmul(p, p), {p: a}); print('GPU:', tf.test.is_gpu_available(), ' matmul relative error: %.1e' % (abs(r - a @ a).max() / abs(a @ a).max()))"
+#
+# Verified 2026-10-13 on NERSC Perlmutter (conda 25.11 with libmamba; NVIDIA A100-SXM4-40GB, driver 580.178.04),
+# inference only:
+#   - builds from scratch in 4.5 min (8.2 GB); a second build from this file gave the identical package set;
+#   - matmul and conv2d on the A100 agree with NumPy / the CPU to 1e-06 (TF32 off);
+#   - src/inference/run_inference_pipeline.py on the 626 processed tiles (dataset/Whole_Slides_Segments_Processed/
+#     CDX2_Data): inference 17.1 min (1.6 s per tile; model.detect 0.14 s per tile against 1.0 s on the CPU, the rest
+#     is reading and drawing), whole pipeline 31 min. Crypt masks vs the published inference/inf: 3,829 of 3,869
+#     identical (CPU reference environment: 3,806), 37 differ by 1 pixel, 1 by 596 pixels, 1 published mask not
+#     found; same number of masks on 21 of 22 slides. U-shape split: all 3,867 common masks in the same category.
+#     Per-slide table vs inference/res_new.txt: same number of crypts on 21 of 21 slides, largest per-slide
+#     difference 0.0023 (CPU reference: 0.0023); Welch p = 0.000986 / 0.00579 / 0.667 (CPU reference from the
+#     processed tiles 0.00102 / 0.00624 / 0.665; published 0.00113 / 0.00595 / 0.666);
+#   - downstream steps on the same masks with NumPy seeded (the U-shape step draws an unseeded subsample) in this
+#     environment and in the CPU reference environment: U-shape split and all 3,754 patches byte-identical,
+#     per-slide values equal to 1e-13 (floating-point rounding), same p-values.
+#   - not verified: training; other GPU models and drivers (only the A100 with driver 580 was available).
+
+name: cdx2_tf1_gpu
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8.15
+  - numpy=1.21.6
+  - scipy=1.5.3
+  - scikit-image=0.16.2
+  - h5py=2.10.0
+  - pillow=9.2.0
+  - matplotlib=3.3.4
+  - opencv=4.5.1
+  - imageio=2.36.0
+  - shapely=1.7.1
+  - pandas=1.2.3
+  - ipython=7.33.0
+  - pip
+  - pip:
+      - --extra-index-url https://pypi.nvidia.com
+      - nvidia-tensorflow==1.15.5+nv22.12
+      - keras==2.2.4
+      - protobuf==3.20.3
+      # CUDA 11.8 libraries of the 22.12 release (pip wheels), nvrtc for cuDNN (see the post-install link)
+      - nvidia-cuda-runtime-cu11==11.8.89
+      - nvidia-cublas-cu11==11.11.3.6
+      - nvidia-cufft-cu11==10.9.0.58
+      - nvidia-cudnn-cu11==8.7.0.84
+      - nvidia-curand-cu11==10.3.0.86
+      - nvidia-cusolver-cu11==11.4.1.48
+      - nvidia-cusparse-cu11==11.7.5.86
+      - nvidia-nccl-cu11==2.15.5
+      - nvidia-cuda-cupti-cu11==11.8.87
+      - nvidia-cuda-nvcc-cu11==11.8.89
+      - nvidia-cuda-nvrtc-cu11==11.8.89
+      - tensorrt==8.5.1.7
+      - nvidia-dali-cuda110==1.20.0
+      - nvidia-dali-nvtf-plugin==1.20.0+nv22.12
+      # other dependencies of nvidia-tensorflow, pinned to the tested versions
+      - tensorflow-estimator==1.15.1
+      - tensorboard==1.15.0
+      - keras-applications==1.0.8
+      - keras-preprocessing==1.1.2
+      - absl-py==2.3.1
+      - astor==0.8.1
+      - astunparse==1.6.3
+      - gast==0.3.3
+      - google-pasta==0.2.0
+      - grpcio==1.70.0
+      - opt-einsum==3.4.0
+      - termcolor==2.4.0
+      - wrapt==2.0.1
+      - markdown==3.7
+      - werkzeug==3.0.6
+variables:
+  NVIDIA_TF32_OVERRIDE: "0"

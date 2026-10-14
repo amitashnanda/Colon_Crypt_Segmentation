@@ -1,0 +1,74 @@
+# TF1 GPU environment for GPUs that CUDA 10.0 supports (compute capability 3.5 - 7.5): Kepler K40/K80, Maxwell
+# (GTX 9xx, M40), Pascal (P100, P40, GTX 10xx), Volta (V100, Titan V), Turing (T4, RTX 20xx, Quadro RTX).
+# TensorFlow 1.15.5 GPU (Google's pip wheel, built for CUDA 10.0 / cuDNN 7; GPU code for sm_35, 37, 52, 60, 61, 70)
+# with the CUDA 10.0.130 runtime and cuDNN 7.6.5 from conda-forge. Everything else is pinned exactly as in
+# environment_cdx2_tf1_ref.yml, the CPU environment that reproduced the published results (Python 3.7.12, numpy
+# 1.16.6, scikit-image 0.15.0, OpenCV 4.5.1, imgaug 0.4.0, Keras 2.2.4, h5py 2.10.0); built, the two environments
+# differ only in tensorflow -> tensorflow-gpu 1.15.5 plus cudatoolkit and cudnn.
+#
+# NVIDIA driver: >= 410.48 (CUDA 10.0); newer drivers also work, e.g. 460.56 ("CUDA Version: 11.2" in nvidia-smi,
+# the server of the original runs), 470, 535, 550, 580. No system CUDA toolkit and no LD_LIBRARY_PATH are needed:
+# TF loads libcudart.so.10.0, libcublas, libcudnn.so.7, ... from <env>/lib.
+# DO NOT USE on Ampere or newer GPUs (A100, A10, A40, H100, L40, RTX 30xx/40xx/50xx): there it runs without any error
+# but computes wrong results (tested on an A100, see below). Use environment_cdx2_tf1_gpu_ampere.yml there.
+#
+# Create from the repository root (conda >= 4.9; mamba works the same way):
+#   conda env create -f envs/environment_cdx2_tf1_gpu_cuda10.yml -p /path/to/conda_envs/cdx2_tf1_gpu_cuda10
+#   /path/to/conda_envs/cdx2_tf1_gpu_cuda10/bin/pip install --no-deps imgaug==0.4.0 imutils==0.5.4
+#   conda activate /path/to/conda_envs/cdx2_tf1_gpu_cuda10
+# (imgaug/imutils go in without dependencies so that they do not pull a newer numpy.) Check that the GPU computes
+# correctly (tf.test.is_gpu_available() alone is not enough):
+#   python -c "import numpy as np, tensorflow as tf; a = np.random.rand(1024, 1024).astype('float32'); p = tf.placeholder(tf.float32, a.shape); r = tf.Session().run(tf.matmul(p, p), {p: a}); print('GPU:', tf.test.is_gpu_available(), ' matmul relative error: %.1e' % (abs(r - a @ a).max() / abs(a @ a).max()))"
+#   -> "GPU: True  matmul relative error: ~1e-06" on a supported GPU; an error near 1 means wrong GPU results.
+#
+# Tested 2026-10-13 on NERSC Perlmutter (conda 25.11 with libmamba; NVIDIA A100-SXM4-40GB, driver 580.178.04):
+#   - builds from scratch in 3 min; tf.test.is_built_with_cuda() True, the A100 is found, the environment's CUDA 10.0
+#     and cuDNN 7.6.5 libraries are loaded;
+#   - on the A100 (compute capability 8.0, not supported by CUDA 10.0) the driver first JIT-compiles the compute_70
+#     PTX of TF, cuBLAS and cuDNN (about 8 min before the first matmul, 20 min more before the first convolution;
+#     1.1 GB JIT cache), after which matmul and conv2d run but return wrong values (relative error 1.0) and Mask R-CNN
+#     inference finishes (0.7 s per tile) with 0 crypt masks on 5 test tiles that have 32 published masks. No error
+#     is raised. Hence the warning above.
+#   - not tested: a GPU of compute capability <= 7.5 (none was available). TF 1.15 + CUDA 10.0 + cuDNN 7.6 is the
+#     combination Google built and tested TF 1.15 for, and all non-GPU packages are those of the verified CPU
+#     environment, but inference on such a GPU has not been compared with the published masks.
+#   - training: not verified.
+
+name: cdx2_tf1_gpu_cuda10
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7.12
+  - numpy=1.16.6
+  - scipy=1.2.1
+  - scikit-image=0.15.0
+  - h5py=2.10.0
+  - pillow=9.2.0
+  - matplotlib=3.3.4
+  - opencv=4.5.1
+  - imageio=2.36.0
+  - shapely=1.7.1
+  - pandas=1.2.3
+  - ipython=7.33.0
+  - cudatoolkit=10.0.130
+  - cudnn=7.6.5.32
+  - pip
+  - pip:
+      - tensorflow-gpu==1.15.5
+      - keras==2.2.4
+      - protobuf==3.20.3
+      # TF 1.15 dependencies, pinned to the tested versions (the same as in the CPU reference environment)
+      - tensorflow-estimator==1.15.1
+      - tensorboard==1.15.0
+      - keras-applications==1.0.8
+      - keras-preprocessing==1.1.2
+      - absl-py==2.1.0
+      - astor==0.8.1
+      - gast==0.2.2
+      - google-pasta==0.2.0
+      - grpcio==1.62.3
+      - opt-einsum==3.3.0
+      - termcolor==2.3.0
+      - wrapt==1.16.0
+      - markdown==3.4.4
+      - werkzeug==2.2.3

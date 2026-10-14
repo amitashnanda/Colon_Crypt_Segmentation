@@ -1,0 +1,46 @@
+# PyTorch environment (torch_env) for the TF-parity pipeline in pytorch_mrcnn/ (linux-64, NVIDIA GPU, CUDA 12.4).
+# Every package that touches the results is pinned to the version that produced the published PyTorch results
+# (pytorch_mrcnn/inference/res_tfparity.txt). This matters: built with the newest packages instead, OpenCV 5.0
+# changes the U-shape patches and matplotlib 3.11 the drawings, while the masks stay the same.
+# Tested on NERSC Perlmutter (October 2026): an environment built from this file reproduces the stored results.
+#
+# Create (from the repository root; from pytorch_mrcnn/ the file is ../envs/torch_env.yml):
+#   conda env create --file envs/torch_env.yml --prefix /path/to/conda_envs/torch_env
+#   conda activate /path/to/conda_envs/torch_env
+
+name: torch_env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12.13
+  - pip
+
+  # PyTorch stack with CUDA (pytorch-cuda=12.4 pairs with pytorch 2.5.1 in the pytorch channel)
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - pytorch-cuda=12.4
+
+  # Core numerics from conda (linked against the right BLAS on Linux)
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pillow=12.2.0
+
+  - pip:
+      # Image / array (OpenCV and scikit-image versions change the U-shape patches)
+      - opencv-python==4.13.0.92
+      - scikit-image==0.26.0
+      - h5py==3.16.0
+      - tifffile==2026.4.11
+      - imageio==2.37.3
+      - shapely==2.1.2
+      - imutils==0.5.4
+
+      # Plotting and statistics (predicted_images drawings, pytorch_mrcnn/src/analysis/plot_pvalues.py)
+      - matplotlib==3.10.9
+      - pandas==3.0.2
+      - seaborn==0.13.2

@@ -1,0 +1,49 @@
+# PyTorch environment (torch_env_cpu) for the TF-parity pipeline in pytorch_mrcnn/ on a Linux x86-64 machine without
+# an NVIDIA GPU. The same pinned versions as envs/torch_env.yml (the GPU environment), with the CPU-only build of
+# PyTorch 2.5.1 instead of the CUDA build and without the nvidia channel. On Linux the cpuonly line is needed:
+# without it conda installs the CUDA build. Run the pipeline with --device cpu.
+# Tested on NERSC Perlmutter (13 October 2026, CPU node, 2 x AMD EPYC 7763): an environment with these packages ran
+# the whole pipeline in 34 min (pytorch_mrcnn/inference/inference_cpu/). Against the stored A100 results: the same
+# crypts on all 21 slides, per-slide values within 0.0023, p = 0.00118 / 0.00644 / 0.666 (A100: 0.00112 / 0.00584 /
+# 0.665); a CPU run does not reproduce the stored GPU files byte for byte. envs/torch_env.yml with --device cpu
+# gives bit-identical CPU results (checked on 10 tiles).
+#
+# Create (from the repository root; from pytorch_mrcnn/ the file is ../envs/torch_env_cpu.yml):
+#   conda env create --file envs/torch_env_cpu.yml --prefix /path/to/conda_envs/torch_env_cpu
+#   conda activate /path/to/conda_envs/torch_env_cpu
+
+name: torch_env_cpu
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12.13
+  - pip
+
+  # PyTorch stack, CPU-only build
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - cpuonly            # selects the CPU-only build of PyTorch (without it conda installs the CUDA build on Linux)
+
+  # Core numerics from conda
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pillow=12.2.0
+
+  - pip:
+      # Image / array (OpenCV and scikit-image versions change the U-shape patches)
+      - opencv-python==4.13.0.92
+      - scikit-image==0.26.0
+      - h5py==3.16.0
+      - tifffile==2026.4.11
+      - imageio==2.37.3
+      - shapely==2.1.2
+      - imutils==0.5.4
+
+      # Plotting and statistics (predicted_images drawings, pytorch_mrcnn/src/analysis/plot_pvalues.py)
+      - matplotlib==3.10.9
+      - pandas==3.0.2
+      - seaborn==0.13.2

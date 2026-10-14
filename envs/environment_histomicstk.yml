@@ -1,0 +1,23 @@
+# Environment for the colour-normalisation step only: src/preprocess/color_normalize_pipe.py (HistomicsTK Reinhard
+# normalisation + OpenCV). HistomicsTK cannot be installed into the Python 3.7 TF environment
+# (environment_cdx2_tf1_ref.yml), so this step gets its own small environment.
+# Tested on NERSC Perlmutter (October 2026): normalising the stored raw tile of the original repository
+# (dataset test1/ -> test1_nm/) with dataset/color_reference.png reproduces the stored result pixel for pixel.
+#
+# Create (from the repository root):
+#   conda env create -f envs/environment_histomicstk.yml -p /path/to/conda_envs/cdx2_histomicstk
+#   conda activate /path/to/conda_envs/cdx2_histomicstk
+
+name: cdx2_histomicstk
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --find-links https://girder.github.io/large_image_wheels
+      - histomicstk==1.4.0
+      - opencv-python-headless==5.0.0.93
+      - numpy==2.2.6
+      - scipy==1.15.3
+      - scikit-image==0.25.2

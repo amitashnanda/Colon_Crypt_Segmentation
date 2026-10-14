@@ -1,0 +1,49 @@
+# PyTorch environment (torch_env_macos) for the TF-parity pipeline in pytorch_mrcnn/ on a Mac with Apple silicon
+# (M1 or newer, osx-arm64) and macOS 13 (Ventura) or newer: the Apple-silicon wheel of OpenCV 4.13.0.92 is built for
+# macOS 13. It is envs/torch_env.yml without CUDA: the same version of every package, with the macOS build of
+# PyTorch 2.5.1 instead of the CUDA build (no nvidia channel, no pytorch-cuda) and without the defaults channel,
+# from which nothing is taken on macOS.
+# A Mac has no NVIDIA GPU: run the pipeline with --device cpu (--device mps, the Apple GPU, is accepted but not
+# tested). The stored PyTorch results were made on an NVIDIA GPU; on a CPU some crypt masks can differ from them by
+# a few pixels, so a CPU run does not reproduce the stored files exactly.
+# Checked on 2026-10-13 without a Mac: conda solves this file for osx-arm64 (flexible and strict channel priority,
+# macOS 11 and newer), and pip resolves the pip packages and all their dependencies to Apple-silicon wheels for
+# macOS 13 (imutils is pure Python). Not yet built or run on a Mac.
+#
+# Create (from the repository root; from pytorch_mrcnn/ the file is ../envs/torch_env_macos.yml):
+#   conda env create --file envs/torch_env_macos.yml --prefix /path/to/conda_envs/torch_env_macos
+#   conda activate /path/to/conda_envs/torch_env_macos
+
+name: torch_env_macos
+channels:
+  - pytorch
+  - conda-forge
+
+dependencies:
+  - python=3.12.13
+  - pip
+
+  # PyTorch stack, macOS build for Apple silicon (CPU and MPS)
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+
+  # Core numerics from conda
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pillow=12.2.0
+
+  - pip:
+      # Image / array (OpenCV and scikit-image versions change the U-shape patches)
+      - opencv-python==4.13.0.92
+      - scikit-image==0.26.0
+      - h5py==3.16.0
+      - tifffile==2026.4.11
+      - imageio==2.37.3
+      - shapely==2.1.2
+      - imutils==0.5.4
+
+      # Plotting and statistics (predicted_images drawings, pytorch_mrcnn/src/analysis/plot_pvalues.py)
+      - matplotlib==3.10.9
+      - pandas==3.0.2
+      - seaborn==0.13.2
