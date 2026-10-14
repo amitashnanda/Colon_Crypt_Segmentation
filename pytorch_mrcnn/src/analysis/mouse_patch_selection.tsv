@@ -1,0 +1,106 @@
+# Mouse DSS patch selection, read by src/analysis/mouse_patch_statistics.py (patches are matched by protocol and file name).
+#
+# One row per crypt patch of the TF mouse results (inference/Mouse/boiling/patch_b_us: 49, inference/Mouse/pressure/patch_p_us: 45).
+#   selected = 1           the patch is in the per-patch table: all pressure patches, and the 39 boiling patches of
+#                          inference/Mouse/boiling/patch_b_us_copy/ (the stored per_image_brown_intensity.tsv and
+#                          summary_and_pvalue.tsv were computed on these patches)
+#   notebook_excluded = 1  one of the 4 patches the mouse cells of src/inference/testing_data_analysis.ipynb drop before their
+#                          Welch test (rows_to_drop = [7, 11, 51, 54] of inference/Mouse/per_image_brown_intensity.tsv, stored row
+#                          order) -> stored p = 0.0385
+#   category               the split category of the patch in the TF results (for information only)
+# Written on 2026-10-13 from the stored files.
+protocol	category	patch	selected	notebook_excluded
+boiling	accepted	patch_0004_pr_b1_2.png	0	0
+boiling	accepted	patch_0004_pr_b2_2.png	0	0
+boiling	accepted	patch_0005_pr_b1_0.png	1	0
+boiling	accepted	patch_0005_pr_b2_0.png	1	0
+boiling	accepted	patch_0008_b3_0.png	1	0
+boiling	accepted	patch_0014_b3_0.png	0	0
+boiling	accepted	patch_0014_pr_b3_2.png	0	0
+boiling	fragmented	patch_0001_pr_b1_0.png	1	0
+boiling	fragmented	patch_0001_pr_b1_1.png	1	0
+boiling	fragmented	patch_0001_pr_b2_0.png	1	0
+boiling	fragmented	patch_0001_pr_b2_1.png	1	0
+boiling	fragmented	patch_0001_pr_b3_0.png	1	0
+boiling	fragmented	patch_0003_pr_b3_0.png	1	0
+boiling	fragmented	patch_0004_b1_0.png	0	0
+boiling	fragmented	patch_0004_b1_1.png	0	0
+boiling	fragmented	patch_0004_b2_0.png	0	0
+boiling	fragmented	patch_0004_b2_1.png	0	0
+boiling	fragmented	patch_0004_pr_b1_0.png	1	0
+boiling	fragmented	patch_0004_pr_b1_1.png	1	0
+boiling	fragmented	patch_0004_pr_b2_0.png	1	0
+boiling	fragmented	patch_0004_pr_b2_1.png	1	0
+boiling	fragmented	patch_0005_b1_0.png	1	0
+boiling	fragmented	patch_0005_b2_0.png	1	0
+boiling	fragmented	patch_0006_b1_0.png	1	0
+boiling	fragmented	patch_0006_b2_0.png	1	0
+boiling	fragmented	patch_0006_pr_b2_0.png	1	0
+boiling	fragmented	patch_0006_pr_b2_1.png	1	0
+boiling	fragmented	patch_0007_pr_b1_1.png	1	0
+boiling	fragmented	patch_0007_pr_b2_1.png	1	0
+boiling	fragmented	patch_0008_pr_b3_0.png	1	0
+boiling	fragmented	patch_0009_b3_1.png	1	0
+boiling	fragmented	patch_0009_pr_b3_0.png	1	0
+boiling	fragmented	patch_0010_b2_0.png	1	0
+boiling	fragmented	patch_0010_pr1_b3_0.png	1	0
+boiling	fragmented	patch_0010_pr1_b3_2.png	1	0
+boiling	fragmented	patch_0010_pr2_b3_0.png	1	0
+boiling	fragmented	patch_0010_pr2_b3_1.png	1	0
+boiling	fragmented	patch_0010_pr2_b3_2.png	0	0
+boiling	fragmented	patch_0014_pr_b3_0.png	1	0
+boiling	fragmented	patch_0014_pr_b3_1.png	1	1
+boiling	fragmented	patch_0015_pr_b3_0.png	1	0
+boiling	fragmented	patch_0015_pr_b3_2.png	1	1
+boiling	fragmented	patch_0016_pr_b3_3.png	0	0
+boiling	fragmented	patch_0016_pr_b3_4.png	1	0
+boiling	fragmented	patch_001_pr_b3_1.png	1	0
+boiling	fragmented	patch_test_b1_0.png	1	0
+boiling	fragmented	patch_test_b1_1.png	1	0
+boiling	fragmented	patch_test_b2_0.png	1	0
+boiling	fragmented	patch_test_b2_1.png	1	0
+pressure	accepted	patch_0001_0.png	1	0
+pressure	accepted	patch_0001_11.png	1	0
+pressure	accepted	patch_0001_2.png	1	0
+pressure	accepted	patch_0001_9.png	1	0
+pressure	accepted	patch_0002_10.png	1	0
+pressure	accepted	patch_0002_15.png	1	0
+pressure	accepted	patch_0002_18.png	1	0
+pressure	accepted	patch_0002_p1_pr_0.png	1	0
+pressure	accepted	patch_0003_13.png	1	0
+pressure	accepted	patch_0005_25.png	1	0
+pressure	fragmented	patch_0001_10.png	1	0
+pressure	fragmented	patch_0001_7.png	1	0
+pressure	fragmented	patch_0001_p1_0.png	1	0
+pressure	fragmented	patch_0001_p1_pr_0.png	1	0
+pressure	fragmented	patch_0002_14.png	1	0
+pressure	fragmented	patch_0002_17.png	1	0
+pressure	fragmented	patch_0002_20.png	1	0
+pressure	fragmented	patch_0002_3.png	1	0
+pressure	fragmented	patch_0002_5.png	1	0
+pressure	fragmented	patch_0002_p1_0.png	1	0
+pressure	fragmented	patch_0003_10.png	1	0
+pressure	fragmented	patch_0003_14.png	1	1
+pressure	fragmented	patch_0003_5.png	1	0
+pressure	fragmented	patch_0003_7.png	1	0
+pressure	fragmented	patch_0003_p1_0.png	1	0
+pressure	fragmented	patch_0003_p1_pr_0.png	1	0
+pressure	fragmented	patch_0005_22.png	1	0
+pressure	fragmented	patch_0005_26.png	1	1
+pressure	fragmented	patch_0005_27.png	1	0
+pressure	fragmented	patch_0006_0.png	1	0
+pressure	fragmented	patch_0006_p1_0.png	1	0
+pressure	fragmented	patch_0008_p1_0.png	1	0
+pressure	fragmented	patch_0008_p1_pr_0.png	1	0
+pressure	fragmented	patch_0009_p1_0.png	1	0
+pressure	fragmented	patch_0009_p1_pr_0.png	1	0
+pressure	fragmented	patch_0010_p1_0.png	1	0
+pressure	fragmented	patch_0010_p1_1.png	1	0
+pressure	fragmented	patch_0010_p1_2.png	1	0
+pressure	fragmented	patch_0010_p1_3.png	1	0
+pressure	fragmented	patch_0011_p1_0.png	1	0
+pressure	fragmented	patch_0012_p1_0.png	1	0
+pressure	fragmented	patch_0012_p1_1.png	1	0
+pressure	fragmented	patch_0012_p1_2.png	1	0
+pressure	fragmented	patch_0013_p1_0.png	1	0
+pressure	fragmented	patch_0013_p1_5.png	1	0

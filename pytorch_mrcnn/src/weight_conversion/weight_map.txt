@@ -1,0 +1,389 @@
+LAYER                                         WEIGHT                         SHAPE                     DTYPE            PARAMS
+------------------------------------------------------------------------------------------------------------------------------
+bn2a_branch1                                  bn2a_branch1/beta:0            (256,)                    float32             256
+bn2a_branch1                                  bn2a_branch1/gamma:0           (256,)                    float32             256
+bn2a_branch1                                  bn2a_branch1/moving_mean:0     (256,)                    float32             256
+bn2a_branch1                                  bn2a_branch1/moving_variance:0 (256,)                    float32             256
+bn2a_branch2a                                 bn2a_branch2a/beta:0           (64,)                     float32              64
+bn2a_branch2a                                 bn2a_branch2a/gamma:0          (64,)                     float32              64
+bn2a_branch2a                                 bn2a_branch2a/moving_mean:0    (64,)                     float32              64
+bn2a_branch2a                                 bn2a_branch2a/moving_variance:0 (64,)                     float32              64
+bn2a_branch2b                                 bn2a_branch2b/beta:0           (64,)                     float32              64
+bn2a_branch2b                                 bn2a_branch2b/gamma:0          (64,)                     float32              64
+bn2a_branch2b                                 bn2a_branch2b/moving_mean:0    (64,)                     float32              64
+bn2a_branch2b                                 bn2a_branch2b/moving_variance:0 (64,)                     float32              64
+bn2a_branch2c                                 bn2a_branch2c/beta:0           (256,)                    float32             256
+bn2a_branch2c                                 bn2a_branch2c/gamma:0          (256,)                    float32             256
+bn2a_branch2c                                 bn2a_branch2c/moving_mean:0    (256,)                    float32             256
+bn2a_branch2c                                 bn2a_branch2c/moving_variance:0 (256,)                    float32             256
+bn2b_branch2a                                 bn2b_branch2a/beta:0           (64,)                     float32              64
+bn2b_branch2a                                 bn2b_branch2a/gamma:0          (64,)                     float32              64
+bn2b_branch2a                                 bn2b_branch2a/moving_mean:0    (64,)                     float32              64
+bn2b_branch2a                                 bn2b_branch2a/moving_variance:0 (64,)                     float32              64
+bn2b_branch2b                                 bn2b_branch2b/beta:0           (64,)                     float32              64
+bn2b_branch2b                                 bn2b_branch2b/gamma:0          (64,)                     float32              64
+bn2b_branch2b                                 bn2b_branch2b/moving_mean:0    (64,)                     float32              64
+bn2b_branch2b                                 bn2b_branch2b/moving_variance:0 (64,)                     float32              64
+bn2b_branch2c                                 bn2b_branch2c/beta:0           (256,)                    float32             256
+bn2b_branch2c                                 bn2b_branch2c/gamma:0          (256,)                    float32             256
+bn2b_branch2c                                 bn2b_branch2c/moving_mean:0    (256,)                    float32             256
+bn2b_branch2c                                 bn2b_branch2c/moving_variance:0 (256,)                    float32             256
+bn2c_branch2a                                 bn2c_branch2a/beta:0           (64,)                     float32              64
+bn2c_branch2a                                 bn2c_branch2a/gamma:0          (64,)                     float32              64
+bn2c_branch2a                                 bn2c_branch2a/moving_mean:0    (64,)                     float32              64
+bn2c_branch2a                                 bn2c_branch2a/moving_variance:0 (64,)                     float32              64
+bn2c_branch2b                                 bn2c_branch2b/beta:0           (64,)                     float32              64
+bn2c_branch2b                                 bn2c_branch2b/gamma:0          (64,)                     float32              64
+bn2c_branch2b                                 bn2c_branch2b/moving_mean:0    (64,)                     float32              64
+bn2c_branch2b                                 bn2c_branch2b/moving_variance:0 (64,)                     float32              64
+bn2c_branch2c                                 bn2c_branch2c/beta:0           (256,)                    float32             256
+bn2c_branch2c                                 bn2c_branch2c/gamma:0          (256,)                    float32             256
+bn2c_branch2c                                 bn2c_branch2c/moving_mean:0    (256,)                    float32             256
+bn2c_branch2c                                 bn2c_branch2c/moving_variance:0 (256,)                    float32             256
+bn3a_branch1                                  bn3a_branch1/beta:0            (512,)                    float32             512
+bn3a_branch1                                  bn3a_branch1/gamma:0           (512,)                    float32             512
+bn3a_branch1                                  bn3a_branch1/moving_mean:0     (512,)                    float32             512
+bn3a_branch1                                  bn3a_branch1/moving_variance:0 (512,)                    float32             512
+bn3a_branch2a                                 bn3a_branch2a/beta:0           (128,)                    float32             128
+bn3a_branch2a                                 bn3a_branch2a/gamma:0          (128,)                    float32             128
+bn3a_branch2a                                 bn3a_branch2a/moving_mean:0    (128,)                    float32             128
+bn3a_branch2a                                 bn3a_branch2a/moving_variance:0 (128,)                    float32             128
+bn3a_branch2b                                 bn3a_branch2b/beta:0           (128,)                    float32             128
+bn3a_branch2b                                 bn3a_branch2b/gamma:0          (128,)                    float32             128
+bn3a_branch2b                                 bn3a_branch2b/moving_mean:0    (128,)                    float32             128
+bn3a_branch2b                                 bn3a_branch2b/moving_variance:0 (128,)                    float32             128
+bn3a_branch2c                                 bn3a_branch2c/beta:0           (512,)                    float32             512
+bn3a_branch2c                                 bn3a_branch2c/gamma:0          (512,)                    float32             512
+bn3a_branch2c                                 bn3a_branch2c/moving_mean:0    (512,)                    float32             512
+bn3a_branch2c                                 bn3a_branch2c/moving_variance:0 (512,)                    float32             512
+bn3b_branch2a                                 bn3b_branch2a/beta:0           (128,)                    float32             128
+bn3b_branch2a                                 bn3b_branch2a/gamma:0          (128,)                    float32             128
+bn3b_branch2a                                 bn3b_branch2a/moving_mean:0    (128,)                    float32             128
+bn3b_branch2a                                 bn3b_branch2a/moving_variance:0 (128,)                    float32             128
+bn3b_branch2b                                 bn3b_branch2b/beta:0           (128,)                    float32             128
+bn3b_branch2b                                 bn3b_branch2b/gamma:0          (128,)                    float32             128
+bn3b_branch2b                                 bn3b_branch2b/moving_mean:0    (128,)                    float32             128
+bn3b_branch2b                                 bn3b_branch2b/moving_variance:0 (128,)                    float32             128
+bn3b_branch2c                                 bn3b_branch2c/beta:0           (512,)                    float32             512
+bn3b_branch2c                                 bn3b_branch2c/gamma:0          (512,)                    float32             512
+bn3b_branch2c                                 bn3b_branch2c/moving_mean:0    (512,)                    float32             512
+bn3b_branch2c                                 bn3b_branch2c/moving_variance:0 (512,)                    float32             512
+bn3c_branch2a                                 bn3c_branch2a/beta:0           (128,)                    float32             128
+bn3c_branch2a                                 bn3c_branch2a/gamma:0          (128,)                    float32             128
+bn3c_branch2a                                 bn3c_branch2a/moving_mean:0    (128,)                    float32             128
+bn3c_branch2a                                 bn3c_branch2a/moving_variance:0 (128,)                    float32             128
+bn3c_branch2b                                 bn3c_branch2b/beta:0           (128,)                    float32             128
+bn3c_branch2b                                 bn3c_branch2b/gamma:0          (128,)                    float32             128
+bn3c_branch2b                                 bn3c_branch2b/moving_mean:0    (128,)                    float32             128
+bn3c_branch2b                                 bn3c_branch2b/moving_variance:0 (128,)                    float32             128
+bn3c_branch2c                                 bn3c_branch2c/beta:0           (512,)                    float32             512
+bn3c_branch2c                                 bn3c_branch2c/gamma:0          (512,)                    float32             512
+bn3c_branch2c                                 bn3c_branch2c/moving_mean:0    (512,)                    float32             512
+bn3c_branch2c                                 bn3c_branch2c/moving_variance:0 (512,)                    float32             512
+bn3d_branch2a                                 bn3d_branch2a/beta:0           (128,)                    float32             128
+bn3d_branch2a                                 bn3d_branch2a/gamma:0          (128,)                    float32             128
+bn3d_branch2a                                 bn3d_branch2a/moving_mean:0    (128,)                    float32             128
+bn3d_branch2a                                 bn3d_branch2a/moving_variance:0 (128,)                    float32             128
+bn3d_branch2b                                 bn3d_branch2b/beta:0           (128,)                    float32             128
+bn3d_branch2b                                 bn3d_branch2b/gamma:0          (128,)                    float32             128
+bn3d_branch2b                                 bn3d_branch2b/moving_mean:0    (128,)                    float32             128
+bn3d_branch2b                                 bn3d_branch2b/moving_variance:0 (128,)                    float32             128
+bn3d_branch2c                                 bn3d_branch2c/beta:0           (512,)                    float32             512
+bn3d_branch2c                                 bn3d_branch2c/gamma:0          (512,)                    float32             512
+bn3d_branch2c                                 bn3d_branch2c/moving_mean:0    (512,)                    float32             512
+bn3d_branch2c                                 bn3d_branch2c/moving_variance:0 (512,)                    float32             512
+bn4a_branch1                                  bn4a_branch1/beta:0            (1024,)                   float32           1,024
+bn4a_branch1                                  bn4a_branch1/gamma:0           (1024,)                   float32           1,024
+bn4a_branch1                                  bn4a_branch1/moving_mean:0     (1024,)                   float32           1,024
+bn4a_branch1                                  bn4a_branch1/moving_variance:0 (1024,)                   float32           1,024
+bn4a_branch2a                                 bn4a_branch2a/beta:0           (256,)                    float32             256
+bn4a_branch2a                                 bn4a_branch2a/gamma:0          (256,)                    float32             256
+bn4a_branch2a                                 bn4a_branch2a/moving_mean:0    (256,)                    float32             256
+bn4a_branch2a                                 bn4a_branch2a/moving_variance:0 (256,)                    float32             256
+bn4a_branch2b                                 bn4a_branch2b/beta:0           (256,)                    float32             256
+bn4a_branch2b                                 bn4a_branch2b/gamma:0          (256,)                    float32             256
+bn4a_branch2b                                 bn4a_branch2b/moving_mean:0    (256,)                    float32             256
+bn4a_branch2b                                 bn4a_branch2b/moving_variance:0 (256,)                    float32             256
+bn4a_branch2c                                 bn4a_branch2c/beta:0           (1024,)                   float32           1,024
+bn4a_branch2c                                 bn4a_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4a_branch2c                                 bn4a_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4a_branch2c                                 bn4a_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn4b_branch2a                                 bn4b_branch2a/beta:0           (256,)                    float32             256
+bn4b_branch2a                                 bn4b_branch2a/gamma:0          (256,)                    float32             256
+bn4b_branch2a                                 bn4b_branch2a/moving_mean:0    (256,)                    float32             256
+bn4b_branch2a                                 bn4b_branch2a/moving_variance:0 (256,)                    float32             256
+bn4b_branch2b                                 bn4b_branch2b/beta:0           (256,)                    float32             256
+bn4b_branch2b                                 bn4b_branch2b/gamma:0          (256,)                    float32             256
+bn4b_branch2b                                 bn4b_branch2b/moving_mean:0    (256,)                    float32             256
+bn4b_branch2b                                 bn4b_branch2b/moving_variance:0 (256,)                    float32             256
+bn4b_branch2c                                 bn4b_branch2c/beta:0           (1024,)                   float32           1,024
+bn4b_branch2c                                 bn4b_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4b_branch2c                                 bn4b_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4b_branch2c                                 bn4b_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn4c_branch2a                                 bn4c_branch2a/beta:0           (256,)                    float32             256
+bn4c_branch2a                                 bn4c_branch2a/gamma:0          (256,)                    float32             256
+bn4c_branch2a                                 bn4c_branch2a/moving_mean:0    (256,)                    float32             256
+bn4c_branch2a                                 bn4c_branch2a/moving_variance:0 (256,)                    float32             256
+bn4c_branch2b                                 bn4c_branch2b/beta:0           (256,)                    float32             256
+bn4c_branch2b                                 bn4c_branch2b/gamma:0          (256,)                    float32             256
+bn4c_branch2b                                 bn4c_branch2b/moving_mean:0    (256,)                    float32             256
+bn4c_branch2b                                 bn4c_branch2b/moving_variance:0 (256,)                    float32             256
+bn4c_branch2c                                 bn4c_branch2c/beta:0           (1024,)                   float32           1,024
+bn4c_branch2c                                 bn4c_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4c_branch2c                                 bn4c_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4c_branch2c                                 bn4c_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn4d_branch2a                                 bn4d_branch2a/beta:0           (256,)                    float32             256
+bn4d_branch2a                                 bn4d_branch2a/gamma:0          (256,)                    float32             256
+bn4d_branch2a                                 bn4d_branch2a/moving_mean:0    (256,)                    float32             256
+bn4d_branch2a                                 bn4d_branch2a/moving_variance:0 (256,)                    float32             256
+bn4d_branch2b                                 bn4d_branch2b/beta:0           (256,)                    float32             256
+bn4d_branch2b                                 bn4d_branch2b/gamma:0          (256,)                    float32             256
+bn4d_branch2b                                 bn4d_branch2b/moving_mean:0    (256,)                    float32             256
+bn4d_branch2b                                 bn4d_branch2b/moving_variance:0 (256,)                    float32             256
+bn4d_branch2c                                 bn4d_branch2c/beta:0           (1024,)                   float32           1,024
+bn4d_branch2c                                 bn4d_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4d_branch2c                                 bn4d_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4d_branch2c                                 bn4d_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn4e_branch2a                                 bn4e_branch2a/beta:0           (256,)                    float32             256
+bn4e_branch2a                                 bn4e_branch2a/gamma:0          (256,)                    float32             256
+bn4e_branch2a                                 bn4e_branch2a/moving_mean:0    (256,)                    float32             256
+bn4e_branch2a                                 bn4e_branch2a/moving_variance:0 (256,)                    float32             256
+bn4e_branch2b                                 bn4e_branch2b/beta:0           (256,)                    float32             256
+bn4e_branch2b                                 bn4e_branch2b/gamma:0          (256,)                    float32             256
+bn4e_branch2b                                 bn4e_branch2b/moving_mean:0    (256,)                    float32             256
+bn4e_branch2b                                 bn4e_branch2b/moving_variance:0 (256,)                    float32             256
+bn4e_branch2c                                 bn4e_branch2c/beta:0           (1024,)                   float32           1,024
+bn4e_branch2c                                 bn4e_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4e_branch2c                                 bn4e_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4e_branch2c                                 bn4e_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn4f_branch2a                                 bn4f_branch2a/beta:0           (256,)                    float32             256
+bn4f_branch2a                                 bn4f_branch2a/gamma:0          (256,)                    float32             256
+bn4f_branch2a                                 bn4f_branch2a/moving_mean:0    (256,)                    float32             256
+bn4f_branch2a                                 bn4f_branch2a/moving_variance:0 (256,)                    float32             256
+bn4f_branch2b                                 bn4f_branch2b/beta:0           (256,)                    float32             256
+bn4f_branch2b                                 bn4f_branch2b/gamma:0          (256,)                    float32             256
+bn4f_branch2b                                 bn4f_branch2b/moving_mean:0    (256,)                    float32             256
+bn4f_branch2b                                 bn4f_branch2b/moving_variance:0 (256,)                    float32             256
+bn4f_branch2c                                 bn4f_branch2c/beta:0           (1024,)                   float32           1,024
+bn4f_branch2c                                 bn4f_branch2c/gamma:0          (1024,)                   float32           1,024
+bn4f_branch2c                                 bn4f_branch2c/moving_mean:0    (1024,)                   float32           1,024
+bn4f_branch2c                                 bn4f_branch2c/moving_variance:0 (1024,)                   float32           1,024
+bn5a_branch1                                  bn5a_branch1/beta:0            (2048,)                   float32           2,048
+bn5a_branch1                                  bn5a_branch1/gamma:0           (2048,)                   float32           2,048
+bn5a_branch1                                  bn5a_branch1/moving_mean:0     (2048,)                   float32           2,048
+bn5a_branch1                                  bn5a_branch1/moving_variance:0 (2048,)                   float32           2,048
+bn5a_branch2a                                 bn5a_branch2a/beta:0           (512,)                    float32             512
+bn5a_branch2a                                 bn5a_branch2a/gamma:0          (512,)                    float32             512
+bn5a_branch2a                                 bn5a_branch2a/moving_mean:0    (512,)                    float32             512
+bn5a_branch2a                                 bn5a_branch2a/moving_variance:0 (512,)                    float32             512
+bn5a_branch2b                                 bn5a_branch2b/beta:0           (512,)                    float32             512
+bn5a_branch2b                                 bn5a_branch2b/gamma:0          (512,)                    float32             512
+bn5a_branch2b                                 bn5a_branch2b/moving_mean:0    (512,)                    float32             512
+bn5a_branch2b                                 bn5a_branch2b/moving_variance:0 (512,)                    float32             512
+bn5a_branch2c                                 bn5a_branch2c/beta:0           (2048,)                   float32           2,048
+bn5a_branch2c                                 bn5a_branch2c/gamma:0          (2048,)                   float32           2,048
+bn5a_branch2c                                 bn5a_branch2c/moving_mean:0    (2048,)                   float32           2,048
+bn5a_branch2c                                 bn5a_branch2c/moving_variance:0 (2048,)                   float32           2,048
+bn5b_branch2a                                 bn5b_branch2a/beta:0           (512,)                    float32             512
+bn5b_branch2a                                 bn5b_branch2a/gamma:0          (512,)                    float32             512
+bn5b_branch2a                                 bn5b_branch2a/moving_mean:0    (512,)                    float32             512
+bn5b_branch2a                                 bn5b_branch2a/moving_variance:0 (512,)                    float32             512
+bn5b_branch2b                                 bn5b_branch2b/beta:0           (512,)                    float32             512
+bn5b_branch2b                                 bn5b_branch2b/gamma:0          (512,)                    float32             512
+bn5b_branch2b                                 bn5b_branch2b/moving_mean:0    (512,)                    float32             512
+bn5b_branch2b                                 bn5b_branch2b/moving_variance:0 (512,)                    float32             512
+bn5b_branch2c                                 bn5b_branch2c/beta:0           (2048,)                   float32           2,048
+bn5b_branch2c                                 bn5b_branch2c/gamma:0          (2048,)                   float32           2,048
+bn5b_branch2c                                 bn5b_branch2c/moving_mean:0    (2048,)                   float32           2,048
+bn5b_branch2c                                 bn5b_branch2c/moving_variance:0 (2048,)                   float32           2,048
+bn5c_branch2a                                 bn5c_branch2a/beta:0           (512,)                    float32             512
+bn5c_branch2a                                 bn5c_branch2a/gamma:0          (512,)                    float32             512
+bn5c_branch2a                                 bn5c_branch2a/moving_mean:0    (512,)                    float32             512
+bn5c_branch2a                                 bn5c_branch2a/moving_variance:0 (512,)                    float32             512
+bn5c_branch2b                                 bn5c_branch2b/beta:0           (512,)                    float32             512
+bn5c_branch2b                                 bn5c_branch2b/gamma:0          (512,)                    float32             512
+bn5c_branch2b                                 bn5c_branch2b/moving_mean:0    (512,)                    float32             512
+bn5c_branch2b                                 bn5c_branch2b/moving_variance:0 (512,)                    float32             512
+bn5c_branch2c                                 bn5c_branch2c/beta:0           (2048,)                   float32           2,048
+bn5c_branch2c                                 bn5c_branch2c/gamma:0          (2048,)                   float32           2,048
+bn5c_branch2c                                 bn5c_branch2c/moving_mean:0    (2048,)                   float32           2,048
+bn5c_branch2c                                 bn5c_branch2c/moving_variance:0 (2048,)                   float32           2,048
+bn_conv1                                      bn_conv1/beta:0                (64,)                     float32              64
+bn_conv1                                      bn_conv1/gamma:0               (64,)                     float32              64
+bn_conv1                                      bn_conv1/moving_mean:0         (64,)                     float32              64
+bn_conv1                                      bn_conv1/moving_variance:0     (64,)                     float32              64
+conv1                                         conv1/bias:0                   (64,)                     float32              64
+conv1                                         conv1/kernel:0                 (7, 7, 3, 64)             float32           9,408
+fpn_c2p2                                      fpn_c2p2/bias:0                (256,)                    float32             256
+fpn_c2p2                                      fpn_c2p2/kernel:0              (1, 1, 256, 256)          float32          65,536
+fpn_c3p3                                      fpn_c3p3/bias:0                (256,)                    float32             256
+fpn_c3p3                                      fpn_c3p3/kernel:0              (1, 1, 512, 256)          float32         131,072
+fpn_c4p4                                      fpn_c4p4/bias:0                (256,)                    float32             256
+fpn_c4p4                                      fpn_c4p4/kernel:0              (1, 1, 1024, 256)         float32         262,144
+fpn_c5p5                                      fpn_c5p5/bias:0                (256,)                    float32             256
+fpn_c5p5                                      fpn_c5p5/kernel:0              (1, 1, 2048, 256)         float32         524,288
+fpn_p2                                        fpn_p2/bias:0                  (256,)                    float32             256
+fpn_p2                                        fpn_p2/kernel:0                (3, 3, 256, 256)          float32         589,824
+fpn_p3                                        fpn_p3/bias:0                  (256,)                    float32             256
+fpn_p3                                        fpn_p3/kernel:0                (3, 3, 256, 256)          float32         589,824
+fpn_p4                                        fpn_p4/bias:0                  (256,)                    float32             256
+fpn_p4                                        fpn_p4/kernel:0                (3, 3, 256, 256)          float32         589,824
+fpn_p5                                        fpn_p5/bias:0                  (256,)                    float32             256
+fpn_p5                                        fpn_p5/kernel:0                (3, 3, 256, 256)          float32         589,824
+mrcnn_bbox_fc                                 mrcnn_bbox_fc/bias:0           (12,)                     float32              12
+mrcnn_bbox_fc                                 mrcnn_bbox_fc/kernel:0         (1024, 12)                float32          12,288
+mrcnn_class_bn1                               mrcnn_class_bn1/beta:0         (1024,)                   float32           1,024
+mrcnn_class_bn1                               mrcnn_class_bn1/gamma:0        (1024,)                   float32           1,024
+mrcnn_class_bn1                               mrcnn_class_bn1/moving_mean:0  (1024,)                   float32           1,024
+mrcnn_class_bn1                               mrcnn_class_bn1/moving_variance:0 (1024,)                   float32           1,024
+mrcnn_class_bn2                               mrcnn_class_bn2/beta:0         (1024,)                   float32           1,024
+mrcnn_class_bn2                               mrcnn_class_bn2/gamma:0        (1024,)                   float32           1,024
+mrcnn_class_bn2                               mrcnn_class_bn2/moving_mean:0  (1024,)                   float32           1,024
+mrcnn_class_bn2                               mrcnn_class_bn2/moving_variance:0 (1024,)                   float32           1,024
+mrcnn_class_conv1                             mrcnn_class_conv1/bias:0       (1024,)                   float32           1,024
+mrcnn_class_conv1                             mrcnn_class_conv1/kernel:0     (7, 7, 256, 1024)         float32      12,845,056
+mrcnn_class_conv2                             mrcnn_class_conv2/bias:0       (1024,)                   float32           1,024
+mrcnn_class_conv2                             mrcnn_class_conv2/kernel:0     (1, 1, 1024, 1024)        float32       1,048,576
+mrcnn_class_logits                            mrcnn_class_logits/bias:0      (3,)                      float32               3
+mrcnn_class_logits                            mrcnn_class_logits/kernel:0    (1024, 3)                 float32           3,072
+mrcnn_mask                                    mrcnn_mask/bias:0              (3,)                      float32               3
+mrcnn_mask                                    mrcnn_mask/kernel:0            (1, 1, 256, 3)            float32             768
+mrcnn_mask_bn1                                mrcnn_mask_bn1/beta:0          (256,)                    float32             256
+mrcnn_mask_bn1                                mrcnn_mask_bn1/gamma:0         (256,)                    float32             256
+mrcnn_mask_bn1                                mrcnn_mask_bn1/moving_mean:0   (256,)                    float32             256
+mrcnn_mask_bn1                                mrcnn_mask_bn1/moving_variance:0 (256,)                    float32             256
+mrcnn_mask_bn2                                mrcnn_mask_bn2/beta:0          (256,)                    float32             256
+mrcnn_mask_bn2                                mrcnn_mask_bn2/gamma:0         (256,)                    float32             256
+mrcnn_mask_bn2                                mrcnn_mask_bn2/moving_mean:0   (256,)                    float32             256
+mrcnn_mask_bn2                                mrcnn_mask_bn2/moving_variance:0 (256,)                    float32             256
+mrcnn_mask_bn3                                mrcnn_mask_bn3/beta:0          (256,)                    float32             256
+mrcnn_mask_bn3                                mrcnn_mask_bn3/gamma:0         (256,)                    float32             256
+mrcnn_mask_bn3                                mrcnn_mask_bn3/moving_mean:0   (256,)                    float32             256
+mrcnn_mask_bn3                                mrcnn_mask_bn3/moving_variance:0 (256,)                    float32             256
+mrcnn_mask_bn4                                mrcnn_mask_bn4/beta:0          (256,)                    float32             256
+mrcnn_mask_bn4                                mrcnn_mask_bn4/gamma:0         (256,)                    float32             256
+mrcnn_mask_bn4                                mrcnn_mask_bn4/moving_mean:0   (256,)                    float32             256
+mrcnn_mask_bn4                                mrcnn_mask_bn4/moving_variance:0 (256,)                    float32             256
+mrcnn_mask_conv1                              mrcnn_mask_conv1/bias:0        (256,)                    float32             256
+mrcnn_mask_conv1                              mrcnn_mask_conv1/kernel:0      (3, 3, 256, 256)          float32         589,824
+mrcnn_mask_conv2                              mrcnn_mask_conv2/bias:0        (256,)                    float32             256
+mrcnn_mask_conv2                              mrcnn_mask_conv2/kernel:0      (3, 3, 256, 256)          float32         589,824
+mrcnn_mask_conv3                              mrcnn_mask_conv3/bias:0        (256,)                    float32             256
+mrcnn_mask_conv3                              mrcnn_mask_conv3/kernel:0      (3, 3, 256, 256)          float32         589,824
+mrcnn_mask_conv4                              mrcnn_mask_conv4/bias:0        (256,)                    float32             256
+mrcnn_mask_conv4                              mrcnn_mask_conv4/kernel:0      (3, 3, 256, 256)          float32         589,824
+mrcnn_mask_deconv                             mrcnn_mask_deconv/bias:0       (256,)                    float32             256
+mrcnn_mask_deconv                             mrcnn_mask_deconv/kernel:0     (2, 2, 256, 256)          float32         262,144
+res2a_branch1                                 res2a_branch1/bias:0           (256,)                    float32             256
+res2a_branch1                                 res2a_branch1/kernel:0         (1, 1, 64, 256)           float32          16,384
+res2a_branch2a                                res2a_branch2a/bias:0          (64,)                     float32              64
+res2a_branch2a                                res2a_branch2a/kernel:0        (1, 1, 64, 64)            float32           4,096
+res2a_branch2b                                res2a_branch2b/bias:0          (64,)                     float32              64
+res2a_branch2b                                res2a_branch2b/kernel:0        (3, 3, 64, 64)            float32          36,864
+res2a_branch2c                                res2a_branch2c/bias:0          (256,)                    float32             256
+res2a_branch2c                                res2a_branch2c/kernel:0        (1, 1, 64, 256)           float32          16,384
+res2b_branch2a                                res2b_branch2a/bias:0          (64,)                     float32              64
+res2b_branch2a                                res2b_branch2a/kernel:0        (1, 1, 256, 64)           float32          16,384
+res2b_branch2b                                res2b_branch2b/bias:0          (64,)                     float32              64
+res2b_branch2b                                res2b_branch2b/kernel:0        (3, 3, 64, 64)            float32          36,864
+res2b_branch2c                                res2b_branch2c/bias:0          (256,)                    float32             256
+res2b_branch2c                                res2b_branch2c/kernel:0        (1, 1, 64, 256)           float32          16,384
+res2c_branch2a                                res2c_branch2a/bias:0          (64,)                     float32              64
+res2c_branch2a                                res2c_branch2a/kernel:0        (1, 1, 256, 64)           float32          16,384
+res2c_branch2b                                res2c_branch2b/bias:0          (64,)                     float32              64
+res2c_branch2b                                res2c_branch2b/kernel:0        (3, 3, 64, 64)            float32          36,864
+res2c_branch2c                                res2c_branch2c/bias:0          (256,)                    float32             256
+res2c_branch2c                                res2c_branch2c/kernel:0        (1, 1, 64, 256)           float32          16,384
+res3a_branch1                                 res3a_branch1/bias:0           (512,)                    float32             512
+res3a_branch1                                 res3a_branch1/kernel:0         (1, 1, 256, 512)          float32         131,072
+res3a_branch2a                                res3a_branch2a/bias:0          (128,)                    float32             128
+res3a_branch2a                                res3a_branch2a/kernel:0        (1, 1, 256, 128)          float32          32,768
+res3a_branch2b                                res3a_branch2b/bias:0          (128,)                    float32             128
+res3a_branch2b                                res3a_branch2b/kernel:0        (3, 3, 128, 128)          float32         147,456
+res3a_branch2c                                res3a_branch2c/bias:0          (512,)                    float32             512
+res3a_branch2c                                res3a_branch2c/kernel:0        (1, 1, 128, 512)          float32          65,536
+res3b_branch2a                                res3b_branch2a/bias:0          (128,)                    float32             128
+res3b_branch2a                                res3b_branch2a/kernel:0        (1, 1, 512, 128)          float32          65,536
+res3b_branch2b                                res3b_branch2b/bias:0          (128,)                    float32             128
+res3b_branch2b                                res3b_branch2b/kernel:0        (3, 3, 128, 128)          float32         147,456
+res3b_branch2c                                res3b_branch2c/bias:0          (512,)                    float32             512
+res3b_branch2c                                res3b_branch2c/kernel:0        (1, 1, 128, 512)          float32          65,536
+res3c_branch2a                                res3c_branch2a/bias:0          (128,)                    float32             128
+res3c_branch2a                                res3c_branch2a/kernel:0        (1, 1, 512, 128)          float32          65,536
+res3c_branch2b                                res3c_branch2b/bias:0          (128,)                    float32             128
+res3c_branch2b                                res3c_branch2b/kernel:0        (3, 3, 128, 128)          float32         147,456
+res3c_branch2c                                res3c_branch2c/bias:0          (512,)                    float32             512
+res3c_branch2c                                res3c_branch2c/kernel:0        (1, 1, 128, 512)          float32          65,536
+res3d_branch2a                                res3d_branch2a/bias:0          (128,)                    float32             128
+res3d_branch2a                                res3d_branch2a/kernel:0        (1, 1, 512, 128)          float32          65,536
+res3d_branch2b                                res3d_branch2b/bias:0          (128,)                    float32             128
+res3d_branch2b                                res3d_branch2b/kernel:0        (3, 3, 128, 128)          float32         147,456
+res3d_branch2c                                res3d_branch2c/bias:0          (512,)                    float32             512
+res3d_branch2c                                res3d_branch2c/kernel:0        (1, 1, 128, 512)          float32          65,536
+res4a_branch1                                 res4a_branch1/bias:0           (1024,)                   float32           1,024
+res4a_branch1                                 res4a_branch1/kernel:0         (1, 1, 512, 1024)         float32         524,288
+res4a_branch2a                                res4a_branch2a/bias:0          (256,)                    float32             256
+res4a_branch2a                                res4a_branch2a/kernel:0        (1, 1, 512, 256)          float32         131,072
+res4a_branch2b                                res4a_branch2b/bias:0          (256,)                    float32             256
+res4a_branch2b                                res4a_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4a_branch2c                                res4a_branch2c/bias:0          (1024,)                   float32           1,024
+res4a_branch2c                                res4a_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res4b_branch2a                                res4b_branch2a/bias:0          (256,)                    float32             256
+res4b_branch2a                                res4b_branch2a/kernel:0        (1, 1, 1024, 256)         float32         262,144
+res4b_branch2b                                res4b_branch2b/bias:0          (256,)                    float32             256
+res4b_branch2b                                res4b_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4b_branch2c                                res4b_branch2c/bias:0          (1024,)                   float32           1,024
+res4b_branch2c                                res4b_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res4c_branch2a                                res4c_branch2a/bias:0          (256,)                    float32             256
+res4c_branch2a                                res4c_branch2a/kernel:0        (1, 1, 1024, 256)         float32         262,144
+res4c_branch2b                                res4c_branch2b/bias:0          (256,)                    float32             256
+res4c_branch2b                                res4c_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4c_branch2c                                res4c_branch2c/bias:0          (1024,)                   float32           1,024
+res4c_branch2c                                res4c_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res4d_branch2a                                res4d_branch2a/bias:0          (256,)                    float32             256
+res4d_branch2a                                res4d_branch2a/kernel:0        (1, 1, 1024, 256)         float32         262,144
+res4d_branch2b                                res4d_branch2b/bias:0          (256,)                    float32             256
+res4d_branch2b                                res4d_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4d_branch2c                                res4d_branch2c/bias:0          (1024,)                   float32           1,024
+res4d_branch2c                                res4d_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res4e_branch2a                                res4e_branch2a/bias:0          (256,)                    float32             256
+res4e_branch2a                                res4e_branch2a/kernel:0        (1, 1, 1024, 256)         float32         262,144
+res4e_branch2b                                res4e_branch2b/bias:0          (256,)                    float32             256
+res4e_branch2b                                res4e_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4e_branch2c                                res4e_branch2c/bias:0          (1024,)                   float32           1,024
+res4e_branch2c                                res4e_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res4f_branch2a                                res4f_branch2a/bias:0          (256,)                    float32             256
+res4f_branch2a                                res4f_branch2a/kernel:0        (1, 1, 1024, 256)         float32         262,144
+res4f_branch2b                                res4f_branch2b/bias:0          (256,)                    float32             256
+res4f_branch2b                                res4f_branch2b/kernel:0        (3, 3, 256, 256)          float32         589,824
+res4f_branch2c                                res4f_branch2c/bias:0          (1024,)                   float32           1,024
+res4f_branch2c                                res4f_branch2c/kernel:0        (1, 1, 256, 1024)         float32         262,144
+res5a_branch1                                 res5a_branch1/bias:0           (2048,)                   float32           2,048
+res5a_branch1                                 res5a_branch1/kernel:0         (1, 1, 1024, 2048)        float32       2,097,152
+res5a_branch2a                                res5a_branch2a/bias:0          (512,)                    float32             512
+res5a_branch2a                                res5a_branch2a/kernel:0        (1, 1, 1024, 512)         float32         524,288
+res5a_branch2b                                res5a_branch2b/bias:0          (512,)                    float32             512
+res5a_branch2b                                res5a_branch2b/kernel:0        (3, 3, 512, 512)          float32       2,359,296
+res5a_branch2c                                res5a_branch2c/bias:0          (2048,)                   float32           2,048
+res5a_branch2c                                res5a_branch2c/kernel:0        (1, 1, 512, 2048)         float32       1,048,576
+res5b_branch2a                                res5b_branch2a/bias:0          (512,)                    float32             512
+res5b_branch2a                                res5b_branch2a/kernel:0        (1, 1, 2048, 512)         float32       1,048,576
+res5b_branch2b                                res5b_branch2b/bias:0          (512,)                    float32             512
+res5b_branch2b                                res5b_branch2b/kernel:0        (3, 3, 512, 512)          float32       2,359,296
+res5b_branch2c                                res5b_branch2c/bias:0          (2048,)                   float32           2,048
+res5b_branch2c                                res5b_branch2c/kernel:0        (1, 1, 512, 2048)         float32       1,048,576
+res5c_branch2a                                res5c_branch2a/bias:0          (512,)                    float32             512
+res5c_branch2a                                res5c_branch2a/kernel:0        (1, 1, 2048, 512)         float32       1,048,576
+res5c_branch2b                                res5c_branch2b/bias:0          (512,)                    float32             512
+res5c_branch2b                                res5c_branch2b/kernel:0        (3, 3, 512, 512)          float32       2,359,296
+res5c_branch2c                                res5c_branch2c/bias:0          (2048,)                   float32           2,048
+res5c_branch2c                                res5c_branch2c/kernel:0        (1, 1, 512, 2048)         float32       1,048,576
+rpn_model                                     rpn_bbox_pred/bias:0           (12,)                     float32              12
+rpn_model                                     rpn_bbox_pred/kernel:0         (1, 1, 512, 12)           float32           6,144
+rpn_model                                     rpn_class_raw/bias:0           (6,)                      float32               6
+rpn_model                                     rpn_class_raw/kernel:0         (1, 1, 512, 6)            float32           3,072
+rpn_model                                     rpn_conv_shared/bias:0         (512,)                    float32             512
+rpn_model                                     rpn_conv_shared/kernel:0       (3, 3, 256, 512)          float32       1,179,648
+------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                               44,668,324
+(384 tensors)
